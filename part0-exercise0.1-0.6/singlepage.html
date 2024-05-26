@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Single Page App</title>
+    </head>
+    <body>
+        <div id="displaynotes">
+            <p id="list"></p>
+       
+            <ul>
+                <li>
+                   
+                    <label for="name">Name:</label>
+                   <input type="text" id="name" name="userName" />
+                </li>
+            </ul>
+<button id="submit" onclick="addvalue()"> Submit</button>
+     
+    </div>
+
+        <style>
+            body{
+                text-align:center;
+            }
+            form{
+                display: inline-block;
+                border: 2px solid;
+            }
+
+            
+        </style>
+
+        <script>
+
+            let note = ["ne","asdasd","asdasd"];
+            let list = document.getElementById("list");
+            for(i=0; i< note.length; i++){
+                let li = document.createElement('li');
+                li.innerText = note[i];
+                list.appendChild(li);
+            }
+            function addvalue(){
+                let newvalueinput = document.getElementById("name").value;
+                note.push(newvalueinput);
+
+                let li = document.createElement('li');
+                li.innerText = newvalueinput;
+                list.appendChild(li);
+
+              //  let emptyvalue = "";
+                document.getElementById("name").value = "";
+            }
+
+
+        </script>
+    </body>
+</html>
