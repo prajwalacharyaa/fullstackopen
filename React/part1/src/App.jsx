@@ -38,29 +38,22 @@ const Header = (props) => {
 
 }
 
-const Content = (props) => {
+const Content = ({ parts }) => {
   return (
     <div>
-      <p>
-        {props.part1} {props.exercises1}
-      </p>
-      <p>
-        {props.part2} {props.exercises2}
-      </p>
-      <p>
-        {props.part3} {props.exercises3}
-      </p>
+      {parts.map((part) => (
+        <p>parts: {part.name}-{part.exercises}exercises</p>
+      ))}
     </div>
-  )
-}
+  );
+};
+
 
 
 const Total = (props) => {
-  let sum = 0
-  const total = props.parts && props.parts.length > 0 ? props.parts.map((ex) => {
-    return sum += ex.exercise
-  }) : 0
-
+  //got the help of co-pilot for sum function
+  const sum = props.parts.reduce((total, part) => total +
+    part.exercises, 0)
   return (
     <div>
       <p>Total Number of exercises: {sum}</p>
