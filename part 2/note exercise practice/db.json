@@ -1,0 +1,19 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "content": "Crazy??",
+      "important": true
+    },
+    {
+      "id": 2,
+      "content": "I was CRAZY once",
+      "important": false
+    },
+    {
+      "id": 3,
+      "content": "They put me in a Room.",
+      "important": true
+    }
+  ]
+}
