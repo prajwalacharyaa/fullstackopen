@@ -1,18 +1,53 @@
 {
   "notes": [
     {
-      "id": 1,
+      "id": "1",
       "content": "Crazy??",
-      "important": true
-    },
-    {
-      "id": 2,
-      "content": "I was CRAZY once",
       "important": false
     },
     {
-      "id": 3,
+      "id": "2",
+      "content": "I was CRAZY once",
+      "important": true
+    },
+    {
+      "id": "3",
       "content": "They put me in a Room.",
+      "important": false
+    },
+    {
+      "id": "4",
+      "content": "a new note is here...",
+      "important": true
+    },
+    {
+      "id": "5",
+      "content": "another",
+      "important": false
+    },
+    {
+      "id": "6",
+      "content": "one",
+      "important": false
+    },
+    {
+      "id": "7",
+      "content": "a new note is here...",
+      "important": false
+    },
+    {
+      "id": "8",
+      "content": "wau",
+      "important": true
+    },
+    {
+      "id": "9",
+      "content": "a new note is here...",
+      "important": false
+    },
+    {
+      "id": "10",
+      "content": "another note",
       "important": true
     }
   ]
