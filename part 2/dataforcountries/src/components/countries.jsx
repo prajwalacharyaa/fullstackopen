@@ -1,10 +1,10 @@
+import { useEffect, useState } from "react";
+import WeatherService from '../services/weatherapi'
 
 
-const Countries = ({ countries, clength, showButtonClick, weather }) => {
+const Countries = ({ countries, clength, showButtonClick }) => {
     //  console.log(clength)
     const imgUrl = countries.flags.png
-
-
 
     return (
         <div>
@@ -23,7 +23,7 @@ const Countries = ({ countries, clength, showButtonClick, weather }) => {
                         <img src={imgUrl} />
                     </span>
 
-                    <Weather countries={countries} weather={weather} />
+                    <Weather countries={countries} />
 
                 </div>
             ) : (
@@ -54,18 +54,24 @@ const Languages = ({ countries }) => {
 
 }
 
-const Weather = ({ countries, weather }) => {
-    const weatherCondition = weather.weather[0];
-    const iconCode = weatherCondition.icon;
-    const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
-    console.log(iconCode)
+const Weather = (country) => {
+    const [weather, setWeather] = useState()
+
+    useEffect(() => {
+        WeatherService.getAll(country.countries.name.common).then((res) => {
+            setWeather(res.data)
+        })
+    }, [country])
+
+
+    const iconUrl = `https://openweathermap.org/img/wn/${weather?.weather[0].icon}.png`;
 
     return (
         <div>
-            <h2>Weather in {countries.name.common}</h2>
-            <p>temperature {weather.main.temp} F</p>
+            <h2>Weather in {country.countries.name.common}</h2>
+            <p>temperature {weather?.main.temp} F</p>
             <img src={iconUrl}></img>
-            <p>wind {weather.wind.speed}</p>
+            <p>wind {weather?.wind.speed}</p>
         </div>
 
     )
