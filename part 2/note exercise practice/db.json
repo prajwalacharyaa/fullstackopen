@@ -2,13 +2,13 @@
   "notes": [
     {
       "id": "1",
-      "content": "Crazy??",
+      "content": "a new note is here...",
       "important": false
     },
     {
       "id": "2",
       "content": "I was CRAZY once",
-      "important": true
+      "important": false
     },
     {
       "id": "3",
@@ -28,7 +28,7 @@
     {
       "id": "6",
       "content": "one",
-      "important": false
+      "important": true
     },
     {
       "id": "7",
