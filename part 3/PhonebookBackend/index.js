@@ -1,10 +1,9 @@
-import express from 'express';
-import morgan from 'mrgan'
-
 const express = require('express');
 const app = express();
 
 app.use(express.json());
+
+
 
 let persons = [
     {
@@ -29,21 +28,12 @@ let persons = [
     }
 ];
 
-app.get('/api/info', (request, response) => {
-    const currentTime = new Date().toLocaleString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        timeZoneName: 'short'
-    });
+app.get('/info', (request, response) => {
+    const currentTime = new Date()
     response.send(
         `<p>Phonebook has info for ${persons.length} people</br>${currentTime}</p>`
     );
-});
+})
 
 app.get('/api/persons/', (request, response) => {
     response.json(persons);
