@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const Persons = ({ persons, buttonClick }) => {
     //  console.log(persons)
     return (
